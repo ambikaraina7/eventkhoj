@@ -1,0 +1,150 @@
+.red{
+	color: red;
+}
+.validationinput.ng-invalid {
+    border-color:red;
+}
+.validationinput.ng-valid{
+	border-color:#ced4da;
+}
+.validationinput.ng-untouched{
+	border-color:#ced4da;
+}
+.disabledloc{
+	border-color:#ced4da;
+}
+div#eSearch{
+	background-color: rgb(248,248,248); 
+	padding:1%;
+	border-color: lightgray;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 10px;
+}
+div#result{
+	font-size: 0.875rem;
+	padding: 0%;
+}
+small#locationValidate{
+	display: none;
+	color: red !important;
+}
+small#keywordValidate{
+	display: none;
+	color: red !important;
+}
+div.ename {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    /*width: 68%;*/
+    display: block;
+}
+.md-tooltip{
+	max-width: 15%;
+	white-space: normal;
+	width: auto;
+	height: auto;
+	line-height: 180%;
+}
+#map {
+  height: 500px;   /*The height is 400 pixels */
+  width: 100%;  /* The width is the width of the web page */
+ }
+.yellowcolour{
+	background-color: #f9e0a7;
+}
+.yellowstar{
+	color:yellow;
+}
+/*Autocomplete*/
+md-autocomplete input:not(.md-input) {
+    font-size: 14px;
+    box-sizing: unset;
+    border: 1px solid #ced4da;
+    background-color: #fff;
+    width: 100%;
+    padding: 0 15px;
+    line-height: 40px;
+    border-radius: 0.2rem;
+    height: 30px;
+}
+md-autocomplete {
+    border-radius: 2px;
+    display: block;
+    height: 30px;
+    position: relative;
+    overflow: visible;
+    min-width: 190px;
+}
+md-autocomplete md-autocomplete-wrap {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    box-sizing: border-box;
+    position: relative;
+    overflow: visible;
+    height: 30px;
+}
+/*Twitter extra span*/
+iframe#twitter-widget-0{
+	display:none;
+}
+/*Media Query*/
+@media screen and (max-width: 600px) {
+  span.eventhide {
+    display: none;
+  }
+  tbody.mintablewidth {
+    display: table;
+    min-width: 376px;
+  }
+  .tooltiphide{
+  	display: none;
+  }
+}
+/*Animations*/
+/* The starting CSS styles for the enter animation */
+.edetails.ng-enter {
+  transition:0.5s linear all;
+  transform: translateX(-600px);
+
+}
+
+.edetails.ng-enter.ng-enter-active {
+  transform: translateX(0px);
+
+}
+.elist.ng-enter {
+  transition:0.5s linear all;
+  transform: translateX(600px);
+}
+
+.elist.ng-enter.ng-enter-active {
+  transform: translateX(0px);
+
+}
+
+
+.fadeinclass.ng-enter{
+  transition: all linear 0.5s;
+  height: 0px;
+  opacity: 0;
+}
+.fadeinclass.ng-enter.ng-enter-active {
+  height: 100px;
+  opacity: 1;
+}
+.fadeinclass.ng-leave{
+  transition: all linear 0.5s;
+  height: 100px;
+  opacity: 1;
+}
+.fadeinclass.ng-leave.ng-leave-active {
+  height: 0px;
+  opacity: 0;
+}

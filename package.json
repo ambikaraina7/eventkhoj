@@ -1,0 +1,22 @@
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular-svg-round-progressbar": "^2.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "express-generator": "^4.16.0",
+    "jquery": "^3.3.1",
+    "moment": "^2.22.2",
+    "ngeohash": "^0.6.0",
+    "request": "^2.88.0",
+    "spotify-web-api-node": "^4.0.0"
+  }
+}
