@@ -16,8 +16,8 @@ var moment = require('moment');
 var SpotifyWebApi = require('spotify-web-api-node');
 
 var spotifyApi = new SpotifyWebApi({
-  clientId: 'eb6ecbda066541539b1a756866dd38ca',
-  clientSecret: 'f2f158bb445640de84aa76c0b581da9e'
+  clientId: '_your-spotify-api-client-id_',
+  clientSecret: '_your-spotify-api-client-secret_'
 });
 
 app.use(cors());
@@ -64,7 +64,7 @@ app.get('/artistphoto', function(req, res) {
 
 	var artistName = encodeURIComponent(req.query.artist_name);
 
-	var ap_url ="https://www.googleapis.com/customsearch/v1?q="+ artistName +"&cx=012576778016476224643:yyh7rb_xx5g&imgSize=huge&num=8&searchType=image&key=AIzaSyA0VXCXL_7xUeMzkaI0i1cg0g8f-ol6OaQ";
+	var ap_url ="https://www.googleapis.com/customsearch/v1?q="+ artistName +"&cx=_your-custom-search-engine-id_&imgSize=huge&num=8&searchType=image&key=_your-google-api-key_";
 	console.log("Artist photo url: " + ap_url);
 	request(ap_url, function (error, response, body) {
 	  if (!error && response.statusCode == 200) {
@@ -97,7 +97,7 @@ app.get('/autocomplete', function(req, res) {
 
 	var searchText = encodeURIComponent(req.query.searchText);
 
-	var ac_url ='https://app.ticketmaster.com/discovery/v2/suggest?apikey=XZrWsBik9J3uusheMIT3SvI04D8ZjkVt&keyword=' + searchText;
+	var ac_url ='https://app.ticketmaster.com/discovery/v2/suggest?apikey=_your-ticketmaster-api-key_&keyword=' + searchText;
 	console.log("Autocomplete url: " + ac_url);
 	request(ac_url, function (error, response, body) {
 	  if (!error && response.statusCode == 200) {
@@ -119,7 +119,7 @@ app.get('/geocode', function(req, res) {
 
 	var locationtb = encodeURIComponent(req.query.locationtb);
 
-	var gc_url ="https://maps.googleapis.com/maps/api/geocode/json?address=" + locationtb + "&key=AIzaSyCtS0apTWJBGQseMZqbfoFH6Apa-oSTldE";
+	var gc_url ="https://maps.googleapis.com/maps/api/geocode/json?address=" + locationtb + "&key=_your-google-api-key_";
 	console.log("Geocode url: " + gc_url);
 	request(gc_url, function (error, response, body) {
 	  if (!error && response.statusCode == 200) {
@@ -196,7 +196,7 @@ app.get('/eventsearch', function(req, res){
 
 	
 	console.log("keyword" + keyword);
-	var tm_url ='https://app.ticketmaster.com/discovery/v2/events.json?apikey=XZrWsBik9J3uusheMIT3SvI04D8ZjkVt&keyword=' + keyword + '&sort=date,asc&geoPoint=' + geohashcode + '&radius=' + distance + '&unit=' + disMode +'&segmentId=' + segmentid;
+	var tm_url ='https://app.ticketmaster.com/discovery/v2/events.json?apikey=_your-ticketmaster-api-key_&keyword=' + keyword + '&sort=date,asc&geoPoint=' + geohashcode + '&radius=' + distance + '&unit=' + disMode +'&segmentId=' + segmentid;
 	console.log(tm_url);
 	request(tm_url, function (error, response, body) {
 	  if (!error && response.statusCode == 200) {
@@ -221,7 +221,7 @@ app.get('/eventdetails', function(req, res) {
 	var ev_id = encodeURIComponent(req.query.e_id);
 	console.log("Event ID: " + ev_id);
 
-	var ev_url ="https://app.ticketmaster.com/discovery/v2/events/" + ev_id + "?apikey=XZrWsBik9J3uusheMIT3SvI04D8ZjkVt";
+	var ev_url ="https://app.ticketmaster.com/discovery/v2/events/" + ev_id + "?apikey=_your-ticketmaster-api-key_";
 	console.log("Event Details url: " + ev_url);
 	request(ev_url, function (error, response, body) {
 	  if (!error && response.statusCode == 200) {
@@ -245,7 +245,7 @@ app.get('/venuedetails', function(req, res) {
 	var ev_venue = encodeURIComponent(req.query.venue_name);
 	console.log("Event Venue: " + ev_venue);
 
-	var ven_url ="https://app.ticketmaster.com/discovery/v2/venues.json?keyword=" + ev_venue + "&apikey=XZrWsBik9J3uusheMIT3SvI04D8ZjkVt";
+	var ven_url ="https://app.ticketmaster.com/discovery/v2/venues.json?keyword=" + ev_venue + "&apikey=_your-ticketmaster-api-key_";
 	console.log("Event Details url: " + ven_url);
 	request(ven_url, function (error, response, body) {
 	  if (!error && response.statusCode == 200) {
@@ -270,7 +270,7 @@ app.get('/searchvenue', function(req, res) {
 	console.log("(songkick call 1)Event Venue: " + venue_sk);
 
 
-	var sk_ven_url ="https://api.songkick.com/api/3.0/search/venues.json?query=" + venue_sk + "&apikey=p4weaPELtQuGukqu";
+	var sk_ven_url ="https://api.songkick.com/api/3.0/search/venues.json?query=" + venue_sk + "&apikey=_your-songkick-api-key_";
 	console.log("Event Details url: " + sk_ven_url);
 	request(sk_ven_url, function (error, response, body) {
 	  if (!error && response.statusCode == 200) {
@@ -295,7 +295,7 @@ app.get('/upcomingevents', function(req, res) {
 
 
 
-	var sk2_ven_url ="https://api.songkick.com/api/3.0/venues/" + ven_id_sk + "/calendar.json?apikey=p4weaPELtQuGukqu";
+	var sk2_ven_url ="https://api.songkick.com/api/3.0/venues/" + ven_id_sk + "/calendar.json?apikey=_your-songkick-api-key_";
 	console.log("Event Details url: " + sk2_ven_url);
 	request(sk2_ven_url, function (error, response, body) {
 	  if (!error && response.statusCode == 200) {
